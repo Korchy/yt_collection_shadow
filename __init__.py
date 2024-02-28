@@ -27,6 +27,7 @@ bl_info = {
 @persistent
 def collection_shadow_register():
     # register CollectionShadow
+    print('collection shadow init')
     if bpy.context and hasattr(bpy.context, 'scene'):
         CollectionShadow.register(context=bpy.context)
     else:
@@ -35,9 +36,11 @@ def collection_shadow_register():
 
 def register():
     if not Addon.dev_mode():
+        print('wait for 5 sec')
         bpy.app.timers.register(
             function=collection_shadow_register,
-            first_interval=0.25
+            # first_interval=0.25
+            first_interval=5    # Yuri Tudgin: try to increase init delay to remove excluding collections on load err
         )
     else:
         print('It seems you are trying to use the dev version of the '
