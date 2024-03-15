@@ -18,5 +18,8 @@ Installation
 
 Version history
 -
+1.0.1.
+- Fixed issue: disabling collections in other view layers during collection renaming.
+
 1.0.0.
 - Release.

@@ -15,7 +15,7 @@ bl_info = {
     'name': 'Collection Shadow',
     'category': 'All',
     'author': 'Yuriy Tudgin, Nikita Akimov',
-    'version': (1, 0, 0),
+    'version': (1, 0, 1),
     'blender': (4, 0, 0),
     'location': '',
     'doc_url': 'https://github.com/Korchy/yt_collection_shadow',

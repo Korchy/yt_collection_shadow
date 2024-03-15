@@ -57,7 +57,8 @@ class CollectionShadow:
         if depsgraph.id_type_updated('COLLECTION'):
             for obj in depsgraph.updates:
                 if type(obj.id) is Collection:
-                    if obj.id.name not in cls._collections:
+                    if (obj.id.name not in cls._collections
+                            and len(cls._existed_collections(scene=scene)) > len(cls._collections)):
                         # new collection was added
                         cls._disable_collection(
                             collection=bpy.data.collections[obj.id.name]
